@@ -45,7 +45,7 @@ def main():
     sender_password = 'qoxi wcix iuhu xnhg'  # Use app password if using Gmail
 
     # Receiver's email
-    receiver_email = 'sahanagana@texas.edu'  # You can send it to yourself
+    receiver_email = 'sahanagana@utexas.edu'  # You can send it to yourself
 
     # Send the email
     send_email(mac_address, sender_email, sender_password, receiver_email)
