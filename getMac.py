@@ -1,13 +1,7 @@
 import smtplib
-import uuid
+from getmac import get_mac_address as gma
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
-# Function to get the MAC address
-def get_mac_address():
-    mac = hex(uuid.getnode()).replace('0x', '').upper()
-    mac_address = ':'.join(mac[i:i+2] for i in range(0, 12, 2))
-    return mac_address
 
 # Function to send an email
 def send_email(mac_address, sender_email, sender_password, receiver_email):
@@ -37,7 +31,7 @@ def send_email(mac_address, sender_email, sender_password, receiver_email):
 
 # Main function
 def main():
-    mac_address = get_mac_address()
+    mac_address = gma()
     print(f"Your MAC address is: {mac_address}")
 
     # Sender's email credentials
@@ -45,7 +39,7 @@ def main():
     sender_password = 'qoxi wcix iuhu xnhg'  # Use app password if using Gmail
 
     # Receiver's email
-    receiver_email = 'sahanagana@texas.edu'  # You can send it to yourself
+    receiver_email = 'sahanagana@utexas.edu'  # You can send it to yourself
 
     # Send the email
     send_email(mac_address, sender_email, sender_password, receiver_email)
